@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+ndg-httpsclient = "*"
+pandas = "*"
+pytest-cov = "*"
+pytest-xdist = "*"
+pytest-benchmark = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
