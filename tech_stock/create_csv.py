@@ -1,6 +1,5 @@
 import csv
 import os
-
 import sys
 import pandas as pd
 from tech_stock.stock import Stock
@@ -34,7 +33,12 @@ class StockCSV(object):
 
     @staticmethod
     def __use_pandas(data_to_save: Stock):
-        return pd.DataFrame(data_to_save.as_dict())
+        stock_dict = data_to_save.as_dict()
+        stock_dict["stock_symbol"] = [stock_dict["stock_symbol"]]
+        stock_dict["percentage_change"] = [stock_dict["percentage_change"]]
+        stock_dict["current_price"] = [stock_dict["current_price"]]
+        stock_dict["last_close_price"] = [stock_dict["last_close_price"]]
+        return pd.DataFrame(stock_dict)
 
     def save_as_csv_using_pandas(self, data_to_save: Stock):
         try:
@@ -43,3 +47,7 @@ class StockCSV(object):
         except csv.Error as e:
             sys.exit('Operation {}, Error {}'.format('close', e))
 
+    def get_rows_columns_in_csv(self):
+        data_frame = pd.read_csv(self.file_path)
+        rows, cols = data_frame.shape
+        return rows, cols
