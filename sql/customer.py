@@ -5,7 +5,7 @@ class Customer:
                  address: str,
                  city: str,
                  country: str,
-                 postal_code: int):
+                 postal_code: str):
         self.customer_id = customer_id
         self.customer_name = customer_name
         self.contact_name = contact_name

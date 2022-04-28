@@ -1,5 +1,3 @@
-import pandas as pd
-
 from tech_stock.create_csv import StockCSV
 from tech_stock.stock import Stock
 from test.test_stock_object import stocks

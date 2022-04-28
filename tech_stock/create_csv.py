@@ -6,7 +6,6 @@ from tech_stock.stock import Stock
 
 
 class StockCSV(object):
-    pandas_dataframe = None
 
     def __init__(self, file_name: str, field_names: list):
         self.file_name = file_name

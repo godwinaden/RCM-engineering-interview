@@ -1,6 +1,5 @@
 import pytest
 from tech_stock.stock import Stock
-from timer.timer import method_timer
 
 stocks = [
     {"o": 102.3847, "c": 3302.3847, "h": 302.3847, "dp": 602.3847, "pc": 1.3847, "d": 502.3847, "l": 602.3847,
@@ -47,5 +46,7 @@ class TestStockObject:
         stock_dict = google_stock.as_dict()
         print("Dict: ", stock_dict)
         assert isinstance(stock_dict, dict) and stock_dict["stock_symbol"] == symbol
-        assert isinstance(stock_dict["percentage_change"], float) and stock_dict["percentage_change"] == google_stock.percentage_change
-        assert isinstance(stock_dict["current_price"], float) and stock_dict["current_price"] == google_stock.current_price
+        assert isinstance(stock_dict["percentage_change"], float) \
+               and stock_dict["percentage_change"] == google_stock.percentage_change
+        assert isinstance(stock_dict["current_price"], float) \
+               and stock_dict["current_price"] == google_stock.current_price

@@ -9,6 +9,8 @@ pandas = "*"
 pytest-cov = "*"
 pytest-xdist = "*"
 pytest-benchmark = "*"
+pytest-asyncio = "*"
+requests = "*"
 
 [dev-packages]
 
